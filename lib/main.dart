@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -108,10 +109,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     OnHoverWidget(
                       child: GestureDetector(
-                        onTap: (() {
+                        onTap: () async {
+                          final urlParse =
+                              Uri.parse('https://t.me/lawyer42app');
+                          launchUrl(urlParse);
                           // html.window
                           //     .open('https://t.me/lawyer42app', "_blank");
-                        }),
+                        },
                         child: const Text(
                           'Lawyer42',
                           style: TextStyle(
@@ -128,7 +132,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     OnHoverWidget(
                       child: GestureDetector(
-                        onTap: () {
+                        onTap: () async {
+                          final urlParse = Uri.parse('https://t.me/ultaris');
+                          launchUrl(urlParse);
                           // html.window.open('https://t.me/ultaris', "_blank");
                         },
                         child: CircleAvatar(
@@ -150,7 +156,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     const SizedBox(width: 10),
                     OnHoverWidget(
                       child: GestureDetector(
-                        onTap: () {
+                        onTap: () async {
+                          final urlParse =
+                              Uri.parse('https://github.com/makires');
+                          launchUrl(urlParse);
                           // html.window
                           //     .open('https://github.com/makires', '_blank');
                         },
