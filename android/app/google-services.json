@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "481410023525",
+    "project_id": "ilvutikova-flutter",
+    "storage_bucket": "ilvutikova-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481410023525:android:66a42007c0dd500b93468c",
+        "android_client_info": {
+          "package_name": "com.example.ilvutikova_website_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481410023525-rvdvgnmujpfpgs7fbl1hbo1gigmpg887.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA94Hl0eQhGo38oA2AXoBTQIX96cXZHVrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481410023525-rvdvgnmujpfpgs7fbl1hbo1gigmpg887.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
