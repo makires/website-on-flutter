@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 // import 'dart:html' as html;
 import 'package:url_launcher/url_launcher.dart';
@@ -9,7 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,6 +31,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Future<void> openUrl(String urlString) async {
+    final urlParse = Uri.parse(urlString);
+    if (Platform.isAndroid || Platform.isIOS) {
+      if (await canLaunchUrl(urlParse)) {
+        await launchUrl(urlParse, mode: LaunchMode.externalApplication);
+      }
+    }
+    // else {
+    //   html.window.open(urlString, "_blank");
+    // }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,11 +123,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     OnHoverWidget(
                       child: GestureDetector(
                         onTap: () async {
-                          final urlParse =
-                              Uri.parse('https://t.me/lawyer42app');
-                          launchUrl(urlParse);
-                          // html.window
-                          //     .open('https://t.me/lawyer42app', "_blank");
+                          const urlParse = 'https://t.me/lawyer42app';
+                          openUrl(urlParse);
                         },
                         child: const Text(
                           'Lawyer42',
@@ -133,8 +143,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     OnHoverWidget(
                       child: GestureDetector(
                         onTap: () async {
-                          final urlParse = Uri.parse('https://t.me/ultaris');
-                          launchUrl(urlParse);
+                          const urlParse = 'https://t.me/ultaris';
+                          openUrl(urlParse);
                           // html.window.open('https://t.me/ultaris', "_blank");
                         },
                         child: CircleAvatar(
@@ -157,11 +167,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     OnHoverWidget(
                       child: GestureDetector(
                         onTap: () async {
-                          final urlParse =
-                              Uri.parse('https://github.com/makires');
-                          launchUrl(urlParse);
-                          // html.window
-                          //     .open('https://github.com/makires', '_blank');
+                          const urlParse = 'https://github.com/makires';
+                          openUrl(urlParse);
                         },
                         child: CircleAvatar(
                           radius: 10,
